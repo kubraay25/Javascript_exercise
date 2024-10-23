@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Var</title>
+  </head>
+  <body>
+    <script>
+      function varTest() {
+        var x = 10;
+
+        if (true) {
+          var x = 20;
+          console.log("içerdeki x değeri:" + x);//20
+        }
+        console.log("dışardaki x değeri:"+x);//20
+      }
+
+      varTest();
+    </script>
+  </body>
+</html>
