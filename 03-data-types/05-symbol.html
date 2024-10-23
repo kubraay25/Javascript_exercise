@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>seymbol</title>
+</head>
+<body>
+    <script>
+        //gizli ve benzersiz şeylerde kullanılır
+        const password = Symbol('password');
+
+        const person = {
+            name:'Ali',
+            [password]:'gizliŞifre'
+        }
+        
+        //her adimda 'key' nesnesini döndürür fakat Symbol kullandığım için password anahtarını döndürmez bize.
+        for(let key in person){
+            console.log(key);
+        }//name
+
+
+
+
+
+        //Symbol kullanılmadığında
+        const password2 = String('password');
+
+        const person2 = {
+            name:'Ali',
+            [password2]:'gizliŞifre'
+        }
+        
+        //her adimda 'key' nesnesini döndürür fakat String kullandığım için password anahtarını da döndürür
+        for(let key in person2){
+            console.log(key);
+        }//name,password
+
+    </script>
+</body>
+</html>
