@@ -20,6 +20,22 @@
       } else {
         console.log(degmez);
       }
+
+      //sıfır(0), null, undefined, NaN, ve "" javascript tarafından FALSE olarak kabul edilir harici degerler TRUE dur.
+      const sayi = 0;
+      console.log(Boolean(sayi));//false
+
+      let result = null;
+      console.log(Boolean(result));//false
+
+      let result1;
+      console.log(Boolean(result1));//false
+
+      let result2 = NaN;
+      console.log(Boolean(result2));//false
+
+      const result3 = "";
+      console.log(result3);//false
     </script>
   </body>
 </html>
