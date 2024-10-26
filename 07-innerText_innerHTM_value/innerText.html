@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>inner Text</title>
+</head>
+<body>
+    <h1 id="textBaslik">Kübra Vazgeçmek Başarısız Olmaktan Çok Daha Kötüdür</h1>
+
+    <script>
+        const sec = document.querySelector("#textBaslik");
+        let textVer = sec.innerText;
+        console.log(textVer);
+        sec.innerText = "kübra";
+        console.log(sec.innerText);
+    </script>
+</body>
+</html>
