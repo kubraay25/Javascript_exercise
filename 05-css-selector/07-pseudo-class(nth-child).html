@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>pseudo_class</title>
+  </head>
+  <body>
+    <ul>
+      <li>Bir</li>
+      <li>İki</li>
+      <li>Üç</li>
+      <li>Dört</li>
+      <li>Beş</li>
+    </ul>
+
+    <script>
+        //ul tagi içerisindeki ilk li'yi seçmek istersem
+        //1.yöntem
+        const ilkLi = document.querySelector('ul li:first-child');
+        console.log(ilkLi);
+        //2.yöntem
+        const ilkLi1 = document.getElementsByTagName('li')[0];
+        console.log(ilkLi1);
+        console.log(ilkLi1.textContent);
+
+        
+    </script>
+  </body>
+</html>
