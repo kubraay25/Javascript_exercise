@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>if</title>
+  </head>
+  <body>
+    <!--
+    EXAMPLE:Kullanıcıdan bir sayı al ve bu sayının pozitif mi, negatif mi yoksa sıfır mı olduğunu belirle.
+    -->
+
+    <input type="number" id="txtNumber" placeholder="bir sayi giriniz" />
+
+    <button onclick="kontrolEt()" id="txtButton">sayiyi kontrol et</button>
+
+    <p id="txtResult">sonucu göster</p>
+    <script>
+      function kontrolEt() {
+        //kullanicidan bir sayi alacağız
+        const number = document.querySelector("#txtNumber");
+        const input = Number(number.value);
+
+        const result = document.querySelector("#txtResult");
+
+        //tüm şartları sağlasın
+
+        //pozitif mi, negatif mi, sıfır mı olduğunu kontrol edeceğiz
+        if (!Number.isInteger(input)) {
+          result.innerText = "Lütfen tam sayi giriniz";
+        } else if (input > 0) {
+          result.innerText = "pozitif tam sayidir";
+        } else if (input < 0) {
+          result.innerText = "negatif tam sayidir";
+        } else {
+          result.innerText = "sıfırdır";
+        }
+      }
+
+    </script>
+  </body>
+</html>
