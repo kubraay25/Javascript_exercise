@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Class List</title>
+  </head>
+  <body>
+    <ul>
+      <li class="A"></li>
+      <li class="B"></li>
+      <li class="C"></li>
+      <li class="D"></li>
+      <li class="F"></li>
+    </ul>
+    <script>
+      const liste = document.querySelectorAll("ul li");
+      console.log(liste);
+
+      const classNames = [];
+
+      liste.forEach((item) => {
+        classNames.push(item.className);
+      });
+
+      console.log(classNames);
+    </script>
+  </body>
+</html>
