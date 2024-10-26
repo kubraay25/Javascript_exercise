@@ -15,7 +15,8 @@
     </ul>
 
     <script>
-        //ul tagi içerisindeki ilk li'yi seçmek istersem
+        //........... ul tagi içerisindeki "ilk li'yi" seçmek istersem ...................
+
         //1.yöntem
         const ilkLi = document.querySelector('ul li:first-child');
         console.log(ilkLi);
@@ -23,7 +24,24 @@
         const ilkLi1 = document.getElementsByTagName('li')[0];
         console.log(ilkLi1);
         console.log(ilkLi1.textContent);
+        //3.yöntem
+        const ul = document.querySelector('ul');
+        const ilkLi3 = ul.children[0];
+        console.log(ilkLi3.textContent);
+        //4.yöntem
+        const ilkLi4 = ul.firstElementChild;
+        console.log(ilkLi4.textContent);
+        //5.yöntem
+        const ilkLi5 = document.querySelector('ul li');
+        console.log(ilkLi4.textContent);
 
+        //............ ul tagi içeirisindeki "ikinci li'yi" seçmek istersem
+        const ikinciLi = document.querySelector('ul li:nth-child(2)');
+        console.log(ikinciLi.textContent);
+
+        //............ ul tagi içerisindeki en son ki li yi seçmek istersem.......
+        const sonLi = document.querySelector('ul li:last-child');
+        console.log(sonLi.textContent);
         
     </script>
   </body>

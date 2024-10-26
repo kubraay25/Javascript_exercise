@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Example</title>
+  </head>
+  <body>
+    <ul>
+      <li>test</li>
+      <li>QA</li>
+      <li>software</li>
+      <li>testing</li>
+      <li>specialist</li>
+    </ul>
+    <script>
+      //1.querySelectorAll ve forEach döngüsü ile
+      const liElement = document.querySelectorAll("ul li");
+
+      liElement.forEach((li) => {
+        console.log(li.textContent);
+      });
+
+      //2.getElementsByTagName ve for döngüsü ile
+      const liElement1 = document.getElementsByTagName("li");
+
+      for (let i = 0; i < liElement1.length; i++) {
+        console.log(liElement1[i].textContent);
+      }
+
+      //3.Array.from ve map yöntemi ile diziye çevirip map fonksiyonu kullanarak tüm li metinlerini dizide toplayabilriz
+      const liTexts = Array.from(document.querySelectorAll("ul li")).map(
+        (li) => li.textContent
+      );
+      console.log(liTexts);
+    </script>
+  </body>
+</html>
