@@ -1,11 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>3-example</title>
-</head>
-<body>
-    
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>güncel</title>
+  </head>
+  <body>
+    <!--
+    EXAMPLE:Kullanıcıdan yaşını al ve eğer 
+    18 veya daha büyükse "Reşitsiniz", 
+    değilse "Reşit değilsiniz" yazdır.
+    -->
+
+    <!--kullanicidan yaşını girmesi için bir input alanı oluşturalim-->
+    <input type="text" id="txtNumber" />
+
+    <!--kullanici yaşini girdikten sonra reşit olup olmadığını kontrol eden buton oluştur-->
+    <button onclick="kontrolEt()">kontrol et</button>
+
+    <!--kullanicidan alinan yaş bilgisinden sonra sonucu yazdir-->
+    <p id="result">result</p>
+
+    <script>
+      function kontrolEt() {
+        const number = document.querySelector("#txtNumber");
+        let numberValue = number.value.trim();//boşlukları kaldır ve sayiya çevir
+
+        const result = document.querySelector("#result");
+
+        if (
+          numberValue === "" || // boşsa
+          isNaN(numberValue) || // sayı değilse
+          !Number.isInteger(Number(numberValue)) || // tam sayı değilse
+          Number(numberValue) < 0 // negatif sayıysa
+        ) {
+          result.innerText = "Lütfen geçerli bir tam sayı giriniz";
+        } else if (Number(numberValue) >= 18) {
+          // 18 veya daha büyükse
+          result.innerText = "Reşitsiniz";
+        } else {
+          // 0-17 aralığındaysa
+          result.innerText = "Reşit değilsiniz";
+        }
+        number.value = "";
+      }
+    </script>
+  </body>
 </html>

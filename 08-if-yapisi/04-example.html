@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>güncel</title>
+  </head>
+  <body>
+    <!--
+    Example:Kullanıcıdan bir not (0-100) al ve not derecesini yazdır:
+    90 ve üzeri: "A"
+    80-89: "B"
+    70-79: "C"
+    60-69: "D"
+    60'ın altı: "F"
+    -->
+    <input type="text" id="txtNot" />
+
+    <button onclick="harfNotuHesapla()">harf notu hesapla</button>
+
+    <p id="result">sonucu göster</p>
+
+    <script>
+      function harfNotuHesapla() {
+        const not = document.querySelector("#txtNot");
+        let notValue = Number(not.value.trim());
+
+        const result = document.querySelector("#result");
+
+        //input alanına 0-100 arası bir tam sayi girilecek
+        //sayi 0'dan küçük 100'den büyük olmayacak
+        //negatif tam sayi olmayacak
+        //virgüllü sayi olmayacak
+
+        if (!Number.isInteger(notValue) || notValue<0 || notValue >100) {
+          result.innerText = "geçerli bir not giriniz";
+        } else if (notValue>=90) {
+          result.innerText = "A";
+        } else if (notValue>=80 && notValue<=89) {
+          result.innerText = "B";
+        } else if (notValue>=70 && notValue<=79) {
+          result.innerText = "C";
+        } else if (notValue>=60 && notValue<=69) {
+          result.innerText = "D";
+        } else {
+          result.innerText = "F";
+        }
+        not.value = "";
+      }
+    </script>
+  </body>
+</html>
