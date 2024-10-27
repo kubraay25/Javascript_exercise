@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>example-2</title>
+  </head>
+  <body>
+    <!--
+    Example:Kullanıcıdan bir sayı al ve bu sayının tek mi yoksa çift mi olduğunu belirle.
+    -->
+
+    <!--Bir sayi girmek için-->
+    <input type="number" id="txtNumber" />
+
+    <!--buton tagi koyalım-->
+    <button onclick="islemYap()">caliştir</button>
+
+    <!--sayinin çift mi tek mi olduğunu yazdırmak için-->
+    <p id="result">sonucu yazdır</p>
+
+    <script>
+      function islemYap() {
+        const number = document.querySelector("#txtNumber");
+        const result = document.querySelector("#result");
+
+        let numberSonuc = Number(number.value);
+
+        if (isNaN(numberSonuc) || !Number.isInteger(numberSonuc)) {
+          result.innerText = "lütfen tam sayi giriniz";
+        } else if (numberSonuc % 2 == 0) {
+          result.innerText = "bu bir çift tam sayidir";
+        } else {
+          result.innerText = "bu bir tek tam sayidir";
+        }
+        number.value = "";
+      }
+    </script>
+  </body>
+</html>
