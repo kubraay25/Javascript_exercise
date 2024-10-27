@@ -32,7 +32,7 @@
         //negatif tam sayi olmayacak
         //virgüllü sayi olmayacak
 
-        if (!Number.isInteger(notValue) || notValue<0 || notValue >100) {
+        if (!Number.isInteger(notValue) || isNaN(notValue) ||notValue<0 || notValue >100) {
           result.innerText = "geçerli bir not giriniz";
         } else if (notValue>=90) {
           result.innerText = "A";
