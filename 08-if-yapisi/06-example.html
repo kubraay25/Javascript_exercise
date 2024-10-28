@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selamlama Mesajı</title>
+</head>
+<body>
+
+    <!--
+    EXAMPLE: 0-12: "Günaydın",  12-18: "İyi günler", 18-24: "İyi akşamlar" yazdır.(saat aralıkları)
+    --> 
+    
+    <h2>Güncel Selamlama Mesajı</h2>
+
+    <button onclick="showMessage()">Mesajı Göster</button>
+
+    <p id="greetingMessage"></p>
+
+    <script>
+       function showMessage(){
+
+        const date = new Date();
+        const hour = date.getHours();
+
+        let message;
+
+        if(hour>=0 && hour<12 ){
+            message = "Günaydın";
+        }else if(hour>=12 && hour<18){
+            message = "İyi Günler";
+        }else{
+            message = "İyi Akşamlar"
+        }
+     document.getElementById("greetingMessage").innerText = message;
+
+       }
+    </script>
+
+</body>
+</html>

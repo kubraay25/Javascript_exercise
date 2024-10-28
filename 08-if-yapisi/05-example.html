@@ -1,14 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Güncel</title>
-</head>
-<body>
+  </head>
+  <body>
     <!--
     EXAMPLE:Kullanıcıdan iki sayı al ve hangisinin daha büyük olduğunu yazdır. 
     Sayılar eşitse "Eşit" yaz.
     -->
-</body>
+
+    <!--kullanicidan iki sayi alabilmek için input tagi oluştur-->
+    <input type="number" id="txtNum1" placeholder="birinci sayiyi giriniz" />
+
+    <!--iki sayiyi alt alta göstersin diye boşluk ekledik-->
+    <br /><br />
+    <input type="number" id="txtNum2" placeholder="ikinci sayiyi giriniz" />
+
+    <!--butonu yerleştir-->
+    <br><br>
+    <button onclick="sonuc()">büyük olani hesapla</button>
+
+    <!--sonucu yazdır-->
+    <p id="result">sonucu yazdir</p>
+
+    
+
+    <script>
+      function sonuc() {
+        const not1 = document.querySelector("#txtNum1");
+        let notValue1 = not1.value;
+
+        const not2 = document.querySelector("#txtNum2");
+        let notValue2 = not2.value;
+
+        const result = document.querySelector("#result");
+
+        if(notValue1>notValue2){
+          result.innerText = `${notValue1} daha büyüktür`;
+        }else if(notValue1<notValue2){
+          result.innerText = `${notValue2} daha büyüktür`
+        }else{
+          result.innerText = " sayilar esittir"
+        }
+
+      }
+    
+    </script>
+  </body>
 </html>
